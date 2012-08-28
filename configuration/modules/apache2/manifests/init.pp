@@ -36,4 +36,10 @@ class apache2 {
         creates => "/etc/apache2/sites-enabled/vhosts",
         require => [Package["apache2"], File["/etc/apache2/sites-available/vhosts"]]
     }
+    exec { "apache-restart":
+        path => ["/bin", "/usr/bin"],
+        command => "/etc/init.d/apache2 restart",
+        require => [Package["apache2"], File["/etc/apache2/sites-available/vhosts"], File["/etc/apache2/sites-available/default"]]
+
+    }
 }
