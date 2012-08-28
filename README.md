@@ -13,7 +13,7 @@ Default web development environment with Vagrant, Apache, MySQL, PHP, etc.
     ~/Sites/configuration
 
 2. Run `vagrant up` in the directory where the `Vagrantfile` (link) resides.
-3. Visit `localhost:8080`, `192.168.10.10` or `192.168.10.10/phpmyadmin`.
+3. Visit `192.168.10.10` or `192.168.10.10/phpmyadmin`.
 
 ### Optional Stuff ###
 

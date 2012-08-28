@@ -2,6 +2,5 @@ Welcome to your vagrant-sites box!
 
 Access it via:
     - http://192.168.10.10
-    - http://localhost:8080  
     - http://192.168.10.10/phpmyadmin
 
