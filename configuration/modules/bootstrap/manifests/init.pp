@@ -2,14 +2,20 @@ class bootstrap {
 
     # update apt
     exec { "apt-update":
-        command => "/usr/bin/apt-get update && /usr/bin/apt-get upgrade -y",
+        command => "/usr/bin/apt-get update",
         logoutput => "on_failure"
     }
 
     # install some useful applications
-    package { ["htop", "vim", "git-core", "unzip", "curl", "zsh", "make", "exuberant-ctags", "byobu"]:
+    package { ["htop", "vim", "git-core", "unzip", "curl", "zsh", "pwgen"]:
         ensure => installed,
         require => Exec["apt-update"]
+    }
+
+    # remove vagrant user password (such that ssh login with password is not working)
+    exec { "remove-vagrant-user-password":
+        command => "/usr/bin/passwd --delete vagrant",
+        require => [Exec["apt-update"]]
     }
 
     exec { "chsh-to-zsh":
