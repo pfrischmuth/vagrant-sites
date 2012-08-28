@@ -1,0 +1,10 @@
+## Use something like the following for your custom vhosts
+#<VirtualHost *:80>
+#    ServerName myvhost.local
+#    DocumentRoot /vagrant/vhosts/public
+#
+#    <Directory /vagrant/vhosts/myvhost.local/public>
+#        AllowOverride All
+#    </Directory>
+#</VirtualHost>
+
